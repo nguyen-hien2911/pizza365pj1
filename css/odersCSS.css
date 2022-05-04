@@ -1,0 +1,9 @@
+.label-up {
+    position: absolute;
+    top: -12px;
+    font-size: 15px;
+    letter-spacing: 2px;      
+}
+.main{
+    position: relative;
+}

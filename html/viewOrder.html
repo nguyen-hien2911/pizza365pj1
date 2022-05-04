@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>View Order (for customer)</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/pizza365.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/viewOrder.js"></script>
+</head>
+
+<body>
+    <div class="container jumbotron">
+        <div class="form-group text-center mb-3">
+            <h1 class="" id="h1-order-detail">Order Detail !</h1>            
+        </div>
+        
+        <form>
+            <div class="row form-group">
+                <div class="col-sm-4 border border-primary rounded main pr-4">
+                    <div class="row form-group">
+                        <div class="col-12">
+                            <label class="label-up text-primary" style="background-color: #e9ecef;">Thông tin khách hàng</label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-4">Họ và tên</label>
+                        <input type="text" class="form-control col-sm-8" id="inp-ho-ten" required>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-4">Địa chỉ</label>
+                        <input type="text" class="form-control col-sm-8" id="inp-dia-chi" required>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-4">Số điện thoại</label>
+                        <input type="number" class="form-control col-sm-8" id="inp-so-dien-thoai" required>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-4">Email</label>
+                        <input type="email" class="form-control col-sm-8" id="inp-email" required>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-4">Lời nhắn</label>
+                        <textarea class="form-control col-sm-8" id="inp-loi-nhan" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-8 border border-primary rounded main pr-4">
+                    <div class="row form-group">
+                        <div class="col-12">
+                            <label class="label-up text-primary" style="background-color: #e9ecef;">Thông tin đơn hàng</label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Mã đơn hàng</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-order-id" disabled>
+                            </div>                        
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Trạng thái đơn hàng</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-trang-thai" disabled>
+                            </div>                        
+                        </div>            
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Cỡ combo</label>
+                                <select class="form-control col-sm-8" id="select-combo-size">
+                                    <option value="none">Chọn cỡ Combo</option>
+                                    <option value="S"> Nhỏ</option>
+                                    <option value="M"> Vừa</option>
+                                    <option value="L"> Lớn</option>
+                                </select>
+                            </div>                        
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Đường kính pizza</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-duong-kinh" disabled>
+                            </div>                        
+                        </div>              
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Sườn nướng (miếng)</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-suon-nuong" disabled> 
+                            </div>                        
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Salad (g)</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-salad" disabled>
+                            </div>                        
+                        </div>              
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Đồ uống</label>
+                                <select class="form-control col-sm-8" id="select-drink">
+                                    <option value="none" selected>Chọn loại đồ uống...</option>
+                                </select>
+                            </div>                        
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Số lượng đồ uống</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-so-luong-nuoc-uong" disabled>
+                            </div>                        
+                        </div>              
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Loại pizza</label>
+                                <select class="form-control col-sm-8" id="select-loai-pizza">
+                                    <option value="none">Chọn loại pizza</option>
+                                    <option value="hawaii">Hawaii</option>
+                                    <option value="seafood">Hải sản</option>
+                                    <option value="bacon">Thịt hun khói</option>
+                                </select>
+                            </div>                        
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Thành tiền</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-thanh-tien" disabled>
+                            </div>                        
+                        </div>              
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Mã voucher</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-voucher-id">
+                            </div>                        
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Giảm giá</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-giam-gia" disabled>
+                            </div>                        
+                        </div>              
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Ngày tạo đơn</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-ngay-tao" disabled>
+                            </div>                        
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4">Ngày cập nhật</label>
+                                <input type="text" class="form-control col-sm-8" id="inp-ngay-cap-nhat" disabled>
+                            </div>                        
+                        </div>              
+                    </div>                
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-8 text-left">
+                    <button class="btn btn-success w-25" id="btn-update" >Update</button>
+                </div>
+                <div class="col-4 text-right">
+                    <a href="../pizza365index.html" class="">Quay lại</a>
+                </div>
+            </div> 
+        </form>              
+    </div>
+</body>
+<script>
+
+</script>
+</html>
